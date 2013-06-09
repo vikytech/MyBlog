@@ -1,0 +1,24 @@
+<H1>My First Blog</H1>
+<p>Hello Guys, Hoz Life ??</p>
+
+
+<p>
+  Okay, Now lets see the contents from the database :)
+</p>
+<hr/>
+<% i=0 %>
+<% @posts.each do |post| %>
+    <H2><%= i=i+1 %>  <%= link_to post.title, post %></H2>
+    <p><%= post.content %></p>
+    <p>
+      <%= link_to "Edit", edit_post_path(post)%>
+      <%= link_to "Delete", post, :confirm => "Are you sure You you want to delete This Post ?? ", :method => :delete %>
+
+    </p>
+    <HR/>
+<% end %>
+
+
+<p>
+  <%= link_to "Add a new Post", new_post_path %>
+</p>
